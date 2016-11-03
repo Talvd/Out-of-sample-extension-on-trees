@@ -1,0 +1,69 @@
+function [ T ] = SpectralPartitionTree(points, k, NN)
+%--------------------------------------------------------------- 
+% Construct a binary hierarchy tree using spectral partition by the sign of the second eigenvector of
+% the graph Laplacian. We use the tree structure
+%
+% Input
+%  points - the data points: d X N where d is the dimension
+%  k - the number of minimal points per partition subset.
+%  NN - Number of nearest neighbours to consider in the affinity 
+%       construction matrix
+%       
+% Output
+%  T - a tree class variable
+%
+%---------------------------------------------------------------
+% Nir Sharon June 2013
+%---------------------------------------------------------------
+
+n = length(points);
+ind_arr = 1:n;
+depth = ceil(log(n/k));
+Q=queue(n/k);
+T=tree;
+
+[T,nodeID]=addnode(T,0,[1:n]);
+Q=Q.add(nodeID);
+
+
+while ~isempty(Q)
+    [Q,nodeID]=remove(Q);
+    
+    index=getkey(T,nodeID);
+    
+    ind = cell2mat(index);
+    v = GLE_Sparse(points(ind),NN,2);
+        
+%     I=key{:};
+%     l=I(1);
+%     h=I(2);
+    
+    dd=getdepth(T,nodeID);
+    left_index = ind_arr(v(:,2)<=0);
+    right_index = ind_arr(v(:,2)>0);
+    
+    if (length(ind_arr(left_index))<=k)||(length(ind_arr(right_index))<=k)
+        dd=depth;
+    end
+
+        %     
+%     fprintf('Procedding interval [%4.2f,%4.2f] \t depth=%d\n',l,h,dd);
+        
+    if dd>depth-1
+        continue
+    end
+    
+    current_arr = ind_arr(ind);
+    left_index = current_arr(
+    
+    [T,lnode]=addnode(T,nodeID,left_index);
+    [T,rnode]=addnode(T,nodeID,right_index);
+    
+    Q=add(Q,lnode);
+    Q=add(Q,rnode);
+end
+    
+plot1(T,@node2str);
+
+end
+

@@ -1,0 +1,28 @@
+function [ part1, part2 ] = binary_spectral_partition( points,NN_func, NN )
+% partition by the sign of the second eigenvector of
+% the graph Laplacian.
+% Input
+%  points - the data points: d X N where d is the dimension
+%  NN - Number of nearest neighbours to consider in the affinity 
+%       construction matrix
+%       
+% Output
+%  part1,part2 - two sets of indices of the partition of "points"
+%
+%---------------------------------------------------------------
+% Nir Sharon June 2013
+%---------------------------------------------------------------
+
+n = length(points);
+ind_arr = 1:n;
+
+if size(points,2)<2
+    part1 = 
+v = GLE(points,NN_func,NN,2);
+
+part1 = ind_arr(v(:,2)<=0);
+part2 = ind_arr(v(:,2)>0);
+
+
+end
+

@@ -1,0 +1,174 @@
+Paper:
+http://www.pnas.org/content/early/2011/08/30/1107769108
+
+"Randomized approximate nearest neighbors algorithm",
+Peter W. Jones, Andrei Osipov, Vladimir Rokhlin,
+PNAS 2011.
+
+--------------------------------------
+
+About using the algorithm with MATLAB.
+
+
+The code has been tested on a 64-bit Linux (Ubuntu).
+
+You need to have gfortran installed 
+(a standard Linux package, probably already installed on your machine).
+
+The algorithm can be run from within MATLAB.
+There are three ways to do so. 
+All are exemplified in the following MATLAB scripts:
+1) test_points64.m
+   uses a single function rann64(...), WITH PARALLELIZATION.
+
+   Remark: you might need to call to e.g.
+           setenv('OMP_NUM_THREADS','2');
+   first from within MATLAB (Replace '2' with the number of CPUs you
+                             want to use).
+   Remark: uses MEX files.
+2) test_rann_shell_one.m
+   uses a stand-alone program rann_shell_one (NO PARALLELIZATION).
+3) test_rann_shell_par.m
+   uses a stand-alone program rann_shell_par (WITH PARALLELIZATION).
+
+
+Configuration parameters:
+
+The algorithm receives a(m,n),
+a matrix of real numbers.
+The columns of this matrix are points (of dimension m),
+and there are n of them.
+
+The algorithm returns two matrices:
+idx(k,n),
+a matrix of int64 numbers.
+idx(i,j) = ith suspect of the point #j.
+
+dst(k,n),
+a matrix of real numbers.
+dst(i,j) = the square of the Euclidean distance between
+the point #j and its ith suspect.
+
+Additional parameters:
+ 
+- numit: number of basic iterations of the algorithm. 
+  Should be a positive integer.
+  Recommended value: you have to play with it.
+  Recipe:
+  If no supercharging is done: run 1 iteration, 
+  say the average proportion of WRONG nearest neighbors is 0 < a < 1.
+  Then if numit = X, the proportion of WRONG nearest neighbors 
+  will be roughly a^X.
+ 
+- isuper: supercharging parameter.
+  0: no supercharging done.
+  1: "reckless" supercharging (better performance, 
+      however parallelized and non-parallelized versions are not 
+      guaranteed to return identical results).
+  2: "cautious" supercharging (worse performance, but parallelized and 
+                      non-parallelized versions return identical results).
+  Recommended value: 1.
+     If too slow, try 0.
+     If for debugging purposes you need parallelized 
+     and non-parallelized versions return identical results, use 1.
+ 
+- istat: collect statistics (based on 1000 points).
+  0: no statistic collection.
+  1: statistics are computed based on the FIRST 1000 points.
+  2: statistics are collected based on RANDOM 1000 points.
+  Recommended value:
+     If you are still "tuning up" the parameters, use 2 
+        (to figure out how well the algorithm does on your data).
+     If you already know what you're doing and need it to be fast, use 0.
+     For debugging purposes, you might want to use 1 
+        (backwards compatibility, easy to check what it does).
+
+
+
+======================================================================
+Running the algorithm as a stand-alone program,
+without using any MEX files at all.
+
+
+Sometimes the MATLAB library are incompatible with the 
+Linux FORTRAN/C compiles being used. In that case, it might be
+still possible to use RANN from MATLAB as a stand-alone program.
+
+Here are the steps:
+
+1) Copy the files into a separate directory.
+2) Compile the code.
+   No parallelization: ./one_shell
+      it'll create the file rann_shell_one
+   With parallelziation: ./par_shell
+      it'll create the file rann_shell_par
+
+   REMARK:
+   to check if the compilation was successful run e.g.
+   ./rann_shell_one
+
+   you'll see a message like
+   
+
+	argc = 1
+	arg[0]=./rann_shell_one
+	usage: rann_shell_one n m k numit isuper istat
+
+
+3) Create the input file rann_pts0000 (the points).
+   This is a binary file of the size 8*m*n bytes,
+   where n=number of points, m=dimension.
+
+   For example, in MATLAB it would be:
+
+
+>> a=rand(m,n);
+>> ff=fopen('rann_pts0000','w');
+>> fwrite(ff,a,'double');
+>> fclose(ff);
+
+4) Run the algorithm from the command line, for example:
+
+./rann_shell_one 32000 64 16 5 1 1
+
+(the parameters are explained above).
+From MATLAB, this would be
+unix('./rann_shell_one 32000 64 16 5 1 1');
+
+It will create the output files (for example, if no parallelization is used):
+
+ rann_idx0000
+ rann_dst0000
+ rann_report_one
+
+
+Here rann_idx0000 is the binary file with the INDICES of the 
+approximate nearest neighbors, of the size 8*k*n
+(each index is a 64-bit integer).
+
+Also, rann_dst0000 is the binary file with the SQUARED DISTANCES to
+the approximate nearest neighbors, of the size 8*k*n
+(each distance is a real number).
+
+5) 
+You can read the files from MATLAB, e.g.
+
+>> ff=fopen('rann_dst0000','r');
+>> dd=fread(ff,'double');
+>> fclose(ff);
+
+and
+>> ff=fopen('rann_idx0000','r');
+>> ii=fread(ff,'int64');
+>> fclose(ff);
+>> ii=int64(ii);
+
+then you can reshape them, e.g.
+>> ddd=reshape(dd,k,n);
+>> iii=reshape(ii,k,n);
+
+
+
+
+
+Andrei Osipov, Yale University

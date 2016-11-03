@@ -1,0 +1,23 @@
+  rm test01.o
+  rm *.o
+  rm int2
+  gcc -c myprin.c -o myprin.o
+  gfortran -fPIC -fsecond-underscore -c corrand4.f -o corrand4.o
+  gfortran -fPIC -fsecond-underscore -c peter_heapsort_rea_part64.f -o peter_heapsort_rea_part64.o
+  gfortran -fPIC -fsecond-underscore -c peter_heapsort_rea64.f -o peter_heapsort_rea64.o
+  gfortran -fPIC -fsecond-underscore -c peter_heapsort_inte64.f -o peter_heapsort_inte64.o
+  gfortran -fPIC -fsecond-underscore -c random_transf4.f -o random_transf4.o
+  gfortran -fPIC -fsecond-underscore -c durdec.f -o durdec.o
+  gfortran -fPIC -fsecond-underscore -c test01.f -o test01.o
+  gfortran -fPIC -fsecond-underscore -c rann_fort64.F -o rann_fort64.o
+  gfortran -fPIC -fsecond-underscore -fopenmp -o int2 test01.o rann_fort64.o \
+          corrand4.o myprin.o \
+          peter_heapsort_rea_part64.o \
+          peter_heapsort_rea64.o \
+          random_transf4.o durdec.o \
+          peter_heapsort_inte64.o 
+  ./int2 
+
+
+     
+   

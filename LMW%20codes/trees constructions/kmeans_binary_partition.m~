@@ -1,0 +1,27 @@
+function [ part1, part2 ] = kmeans_binary_partition( points, NN )
+%
+% partition based on Matlab's kmean implementation
+%
+% Input
+%  points - the data points: d X N where d is the dimension
+%  NN - Number of nearest neighbours to consider in the affinity 
+%       construction matrix
+%       
+% Output
+%  part1,part2 - two sets of indices of the partition of "points"
+%
+%---------------------------------------------------------------
+% Nir Sharon June 2013
+%--------------------------------------------------------------- 
+
+n = length(points);
+ind_arr = 1:n;
+
+partition = kmeans(points',2);
+
+part1 = ind_arr(find(partition==1));
+part2 = ind_arr(v(:,2)>0);
+
+
+end
+

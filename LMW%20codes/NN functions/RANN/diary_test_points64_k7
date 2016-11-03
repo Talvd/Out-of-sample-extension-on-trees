@@ -1,0 +1,603 @@
+random_transf4.f:271.11:
+
+       n=w(5)                                                           
+          1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:284.15:
+
+        iixs=w(2)                                                       
+              1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:285.17:
+
+        nsteps=w(3)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:286.14:
+
+        iww=w(4)                                                        
+             1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:287.12:
+
+        n=w(5)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:288.12:
+
+        k=w(6)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:289.17:
+
+        iwsave=w(7)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:290.16:
+
+        iixs2=w(8)                                                      
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:291.19:
+
+        ialphas2=w(9)                                                   
+                  1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:292.18:
+
+        ibetas2=w(10)                                                   
+                 1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:293.16:
+
+        iixs3=w(11)                                                     
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:348.10:
+
+        w(5)=n+0.1                                                      
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:400.10:
+
+        w(2)=iixs+0.1                                                   
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:401.10:
+
+        w(3)=nsteps+0.1                                                 
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:402.10:
+
+        w(4)=iww+0.1                                                    
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:403.10:
+
+        w(5)=n+0.1                                                      
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:404.10:
+
+        w(6)=k+0.1                                                      
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:405.10:
+
+        w(7)=iwsave+0.1                                                 
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:406.10:
+
+        w(8)=iixs2+0.1                                                  
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:407.10:
+
+        w(9)=ialphas2+0.1                                               
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:408.10:
+
+        w(10)=ibetas2+0.1                                               
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:409.10:
+
+        w(11)=iixs3+0.1                                                 
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:410.10:
+
+        w(12)=iww2+0.1                                                  
+         1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:451.11:
+
+       n=w(5)                                                           
+          1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:463.15:
+
+        iixs=w(2)                                                       
+              1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:464.17:
+
+        nsteps=w(3)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:465.14:
+
+        iww=w(4)                                                        
+             1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:466.12:
+
+        n=w(5)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:467.12:
+
+        k=w(6)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:468.17:
+
+        iwsave=w(7)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:469.16:
+
+        iixs2=w(8)                                                      
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:470.19:
+
+        ialphas2=w(9)                                                   
+                  1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:471.18:
+
+        ibetas2=w(10)                                                   
+                 1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:472.16:
+
+        iixs3=w(11)                                                     
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:473.15:
+
+        iww2=w(12)                                                      
+              1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:516.11:
+
+       n=w(5)                                                           
+          1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:528.15:
+
+        iixs=w(2)                                                       
+              1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:529.17:
+
+        nsteps=w(3)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:530.14:
+
+        iww=w(4)                                                        
+             1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:531.12:
+
+        n=w(5)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:533.12:
+
+        k=w(6)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:534.17:
+
+        iwsave=w(7)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:535.16:
+
+        iixs2=w(8)                                                      
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:536.19:
+
+        ialphas2=w(9)                                                   
+                  1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:537.18:
+
+        ibetas2=w(10)                                                   
+                 1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:538.16:
+
+        iixs3=w(11)                                                     
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:579.11:
+
+       n=w(5)                                                           
+          1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:591.15:
+
+        iixs=w(2)                                                       
+              1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:592.17:
+
+        nsteps=w(3)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:593.14:
+
+        iww=w(4)                                                        
+             1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:594.12:
+
+        n=w(5)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:596.12:
+
+        k=w(6)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:597.17:
+
+        iwsave=w(7)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:598.16:
+
+        iixs2=w(8)                                                      
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:599.19:
+
+        ialphas2=w(9)                                                   
+                  1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:600.18:
+
+        ibetas2=w(10)                                                   
+                 1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:601.16:
+
+        iixs3=w(11)                                                     
+               1
+Warning: Array reference at (1) is out of bounds
+random_transf4.f:602.15:
+
+        iww2=w(12)                                                      
+              1
+Warning: Array reference at (1) is out of bounds
+durdec.f:62.11:
+
+      IFAC(3) = 2                                                       
+          1
+Warning: Array reference at (1) is out of bounds
+durdec.f:65.11:
+
+      IFAC(2) = NF                                                      
+          1
+Warning: Array reference at (1) is out of bounds
+durdec.f:164.16:
+
+      NF = IFAC(2)                                                      
+               1
+Warning: Array reference at (1) is out of bounds
+durdec.f:747.16:
+
+      NF = IFAC(2)                                                      
+               1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:103.10:
+
+        w(20) = w(1)                                                    
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:104.10:
+
+        w(21) = w(2)                                                    
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:104.18:
+
+        w(21) = w(2)                                                    
+                 1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:105.10:
+
+        w(22) = w(3)                                                    
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:105.18:
+
+        w(22) = w(3)                                                    
+                 1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:106.10:
+
+        w(23) = t2-t1                                                   
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:107.10:
+
+        w(24) = t3-t2                                                   
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:109.10:
+
+        w(30) = 1D0 * itimes(11) + 1D-10                                
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:110.10:
+
+        w(31) = 1D0 * itimes(12) + 1D-10                                
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:111.10:
+
+        w(32) = 1D0 * itimes(4) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:112.10:
+
+        w(33) = 1D0 * itimes(3) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:113.10:
+
+        w(34) = 1D0 * itimes(6) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:114.10:
+
+        w(35) = 1D0 * itimes(7) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:115.10:
+
+        w(36) = 1D0 * itimes(8) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:116.10:
+
+        w(37) = 1D0 * itimes(9) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:117.10:
+
+        w(38) = 1D0 * itimes(10) + 1D-10                                
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:118.10:
+
+        w(39) = 1D0 * itimes(5) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:119.10:
+
+        w(40) = 1D0 * itimes(1) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:120.10:
+
+        w(41) = 1D0 * itimes(2) + 1D-10                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:363.24:
+
+        if(d .lt. dists(2)) nsmall=nsmall+1                             
+                       1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:398.19:
+
+        rat0=dists(2)/dds2(2)                                           
+                  1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:512.13:
+
+        iv=w(2)                                                         
+            1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:513.17:
+
+        iindsv=w(3)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:515.12:
+
+        k=w(4)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:516.12:
+
+        m=w(5)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:517.17:
+
+        levmax=w(6)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1020.10:
+
+        w(2)=iv+0.1                                                     
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1021.10:
+
+        w(3)=iindsv+0.1                                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1022.10:
+
+        w(4)=k+0.1                                                      
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1023.10:
+
+        w(5)=m+0.1                                                      
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1024.10:
+
+        w(6)=levmax+0.1                                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1593.12:
+
+        m=w(2)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1594.12:
+
+        k=w(3)                                                          
+           1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1595.17:
+
+        levmax=w(4)                                                     
+                1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1596.16:
+
+        nbout=w(5)                                                      
+               1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1598.17:
+
+        iboxes=w(11)                                                    
+                1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1599.18:
+
+        ilevels=w(12)                                                   
+                 1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1600.19:
+
+        icenters=w(13)                                                  
+                  1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1601.20:
+
+        iw_transf=w(14)                                                 
+                   1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1602.16:
+
+        iipts=w(16)                                                     
+               1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1603.14:
+
+        ids=w(17)                                                       
+             1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1664.10:
+
+        w(2)=m+0.1                                                      
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1665.10:
+
+        w(3)=k+0.1                                                      
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1666.10:
+
+        w(4)=levmax+0.1                                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1667.10:
+
+        w(5)=nbout+0.1                                                  
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1669.10:
+
+        w(11)=iboxes+0.1                                                
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1670.10:
+
+        w(12)=ilevels+0.1                                               
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1671.10:
+
+        w(13)=icenters+0.1                                              
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1672.10:
+
+        w(14)=iw+0.1                                                    
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1673.10:
+
+        w(15)=itrack_coord+0.1                                          
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1674.10:
+
+        w(16)=iipts+0.1                                                 
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:1675.10:
+
+        w(17)=ids+0.1                                                   
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:4017.10:
+
+        w(2) = sum_appr2 / (ntest*k)                                    
+         1
+Warning: Array reference at (1) is out of bounds
+rann_par_fort64.F:4018.10:
+
+        w(3) = dnum_belong_average / k                                  
+         1
+Warning: Array reference at (1) is out of bounds
+rann64.c:355: warning: conflicting types for ‘print_on_off__’
+rann64.c:168: warning: previous implicit declaration of ‘print_on_off__’ was here
+rann64.c:372: warning: conflicting types for ‘prin2_’
+rann64.c:220: warning: previous implicit declaration of ‘prin2_’ was here
+ld: library not found for -lgomp
+collect2: ld returned 1 exit status
+
+    mex: link of ' "rann64.mexmaci64"' failed.
+
+{??? Error using ==> <a href="matlab: opentoline('/Applications/MATLAB_R2010a.app/toolbox/matlab/general/mex.m',222,0)">mex at 222</a>
+Unable to complete successfully.
+
+Error in ==> <a href="matlab: opentoline('/Users/nirsharon/Dropbox/rann_april_2012_readme/test_points64.m',11,0)">test_points64 at 11</a>
+mex rann64.c rann_par_fort64.o corrand4.o random_transf4.o durdec.o peter_heapsort_rea64.o
+peter_heapsort_rea_part64.o peter_heapsort_inte64.o -lgfortran -largeArrayDims -lgomp
+} 
+mex rann64.c rann_par_fort64.o corrand4.o random_transf4.o durdec.o peter_heapsort_rea64.o peter_heapsort_rea_part64.o peter_heapsort_inte64.o -lgfortran -largeArrayDims -lgomp -L/usr/lib/gcc/i686-apple-darwin10/4.2.1/x86_64/
+rann64.c:355: warning: conflicting types for ‘print_on_off__’
+rann64.c:168: warning: previous implicit declaration of ‘print_on_off__’ was here
+rann64.c:372: warning: conflicting types for ‘prin2_’
+rann64.c:220: warning: previous implicit declaration of ‘prin2_’ was here
+yoelnn
+uiopen('/Users/nirsharon/Dropbox/rann_april_2012_readme/yoelnn.m',1)
