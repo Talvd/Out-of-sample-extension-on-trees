@@ -1,0 +1,17 @@
+  rm rann_shell_chunk.o
+  rm rann_save_chunk_fort.o
+  rm myprin.o
+  gcc -c myprin.c
+  gfortran -c -fPIC -fsecond-underscore rann_save_chunk_fort.F
+  gcc -fopenmp -o rann_shell_chunk rann_shell_chunk.c \
+      rann_save_chunk_fort.o myprin.o \
+      rann_fort64.o corrand4.o random_transf4.o \
+      durdec.o peter_heapsort_rea64.o \
+      peter_heapsort_rea_part64.o \
+      peter_heapsort_inte64.o -lm -lgfortran
+
+
+
+
+     
+   

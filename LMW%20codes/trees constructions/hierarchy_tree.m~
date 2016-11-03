@@ -1,0 +1,59 @@
+function [ T ] = hierarchy_tree(points, partition_procedure, k, max_degree)
+%---------------------------------------------------------------
+% Construct an hierarchy tree using a given partition method (partition_procedure)
+% We use the tree structure
+%
+% Input
+%  points - the data points: d X N where d is the dimension
+%  k - the number of minimal points per partition subset.
+%  max_degree - Number of maximal childrens in tree neighbours to consider in the affinity
+%       construction matrix
+%
+% Output
+%  T - a tree class variable
+%
+%---------------------------------------------------------------
+% Nir Sharon June 2013
+%---------------------------------------------------------------
+
+n = length(points);
+ind_arr = 1:n;
+depth = ceil(n/2); % arbitraty
+Q=queue(ceil(n/k));
+T=tree;
+
+[T,nodeID]=addnode(T,0,[1:n]);
+Q=Q.add(nodeID);
+
+
+while ~isempty(Q)
+ 
+    [Q,nodeID]=remove(Q);    
+    index = getkey(T,nodeID);
+    
+    partition_cell = partition_procedure(points(index),max_degree);
+    
+    for j=1:(length(partition_cell))
+        child_ind = partition_cell{j};        
+        dd=getdepth(T,nodeID);
+        
+        if (numel(ind_arr(child_ind))<k)
+            dd=depth;
+        end
+        
+        if dd>depth-1
+            continue
+        end
+        
+        current_arr = ind_arr(index);
+        new_index = current_arr(child_ind);
+        
+        [T,child_node]=addnode(T,nodeID,new_index);        
+        Q=add(Q,child_node);
+    end
+end
+
+plot1(T,@node2str_nodenum);
+
+end
+

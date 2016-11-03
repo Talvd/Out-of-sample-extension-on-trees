@@ -1,0 +1,23 @@
+  rm test02.o
+  rm *.o
+  rm rann_shell_par
+  gcc -c myprin.c -o myprin.o -O3
+  gfortran -fPIC -c rann_save_chunk_fort.F -O3
+  gfortran -fPIC -c corrand4.f -o corrand4.o -O3
+  gfortran -fPIC -c peter_heapsort_rea_part64.f -o peter_heapsort_rea_part64.o -O3
+  gfortran -fPIC -c peter_heapsort_rea64.f -o peter_heapsort_rea64.o -O3
+  gfortran -fPIC -c peter_heapsort_inte64.f -o peter_heapsort_inte64.o -O3
+  gfortran -fPIC -c random_transf4.f -o random_transf4.o -O3
+  gfortran -fPIC -c durdec.f -o durdec.o -O3
+  gfortran -fopenmp -fPIC -c rann_par_fort64.F -o rann_par_fort64.o -O3
+  gcc -fopenmp -o rann_shell_par rann_shell_par.c rann_par_fort64.o \
+          rann_save_chunk_fort.o \
+          corrand4.o myprin.o \
+          peter_heapsort_rea_part64.o \
+          peter_heapsort_rea64.o \
+          random_transf4.o durdec.o \
+          peter_heapsort_inte64.o -lm -lgfortran
+
+
+     
+   

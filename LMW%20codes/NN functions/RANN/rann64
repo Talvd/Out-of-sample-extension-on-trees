@@ -1,0 +1,15 @@
+  rm *.o
+  gcc -c myprin.c -o myprin.o
+  gfortran -c -fPIC corrand4.f -O3
+  gfortran -c -fPIC random_transf4.f -O3
+  gfortran -c -fPIC durdec.f -O3
+  gfortran -c -fPIC peter_heapsort_rea64.f -O3
+  gfortran -c -fPIC peter_heapsort_rea_part64.f -O3
+  gfortran -c -fPIC peter_heapsort_inte64.f -O3
+  gfortran -fopenmp -c -fPIC rann_par_fort64.F -O3
+
+
+
+
+     
+   
