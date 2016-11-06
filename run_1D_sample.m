@@ -10,7 +10,7 @@ display_figure = 1;
 more_figure=1;
 
 run_ls = 0;
-run_abcr = 0;
+run_abcr = 1;
 run_lmw = 1;
 run_nystrom =0;
 run_mse = 0;
@@ -32,6 +32,7 @@ funcs = {@sine_one_over_x @sin @sin_15x};
 funcs_num = size(funcs,2);
 
 for i=1:funcs_num
+    h= figure;
     func = funcs{i};
     f = func(points)';
     f_new_org = func(new_points)';
@@ -44,26 +45,26 @@ for i=1:funcs_num
             f_new =[f_new; v(end)];               
         end 
         figure_title =['LS function=' char(func)];       
-        figure_and_error_1D(points, new_points, f, f_new_org, f_new, figure_title, display_figure, more_figure);
+        h = figure_and_error_1D(points, new_points, f, f_new_org, f_new, figure_title, display_figure, more_figure, h);
     end
     
     %ABCR
     if (run_abcr)
         f_new =  run_ABCR_extension(f, points, new_points);
         figure_title =['ABCR function=' char(func)];       
-        figure_and_error_1D(points, new_points, f, f_new_org, f_new, figure_title, display_figure, more_figure);
+        h = figure_and_error_1D(points, new_points, f, f_new_org, f_new, figure_title, display_figure, more_figure, h);
     end
     
     %LMW
     if (run_lmw)
 %         k_params = [1 3 5 10 N];
 
-        k_params = 10;
+        k_params = [5 10 N];
 
         for k=k_params
             f_new =  run_LMW_extension(f, points, new_points, k, 1);
             figure_title =['LMW k=' num2str(k) ' function=' char(func)];       
-            figure_and_error_1D(points, new_points, f, f_new_org, f_new, figure_title, display_figure, more_figure);
+            h= figure_and_error_1D(points, new_points, f, f_new_org, f_new, figure_title, display_figure, more_figure,h);
         end;
     end
     
