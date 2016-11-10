@@ -16,7 +16,7 @@ if (nargin<6)||isempty(extension_func)
     extension_func = @quaddric_fit_extension;
 end
 
-NN = 7;
+NN = 5;
 
 %create the LMW basis
 %--------------------------------------------------------------------------
