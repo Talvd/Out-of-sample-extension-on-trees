@@ -1,4 +1,4 @@
-function [ S ] = tree2basis( T )
+function [ S , T ] = tree2basis( T )
 %---------------------------------------------------------------
 % The final step of the algorithm - extract the elements of the basis from
 % the tree.
@@ -27,16 +27,24 @@ k = size(val{2},2);
 B(:,1:k) = val{2};
 N = size(B,1);
 
+idx=1;
+idx = idx+k;
+
 % main loop
 C = [];
 for j=1:m
     val = T.getkey(bfs_node_list(j));
     p = length(val);
-    if p==3
+    if p>=3
         ind = val{1};
+        k=size(val{3},2);
         V = zeros(N,k);
         V(ind,1:(size(val{3},2))) = val{3}; 
         C = sparse([C,V]);
+%         size(C,2)
+        val{4}=idx;
+        T=T.setkey(bfs_node_list(j), val);
+        idx = idx +k;
     end
 end
 
