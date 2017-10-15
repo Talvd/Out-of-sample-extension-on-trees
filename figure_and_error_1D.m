@@ -14,11 +14,11 @@ fprintf([figure_title '\n']);
 
 if (display_figure)
     figure
-    scatter(new_points,f_new,'.g');
+    scatter(new_points,f_new,'+r','LineWidth',1.5);
     hold
-    scatter(points,f,'.b');
+    scatter(points,f,'ob','LineWidth',1.5);
     figure_title = strrep(figure_title, '_', '\_');
-    title(figure_title)
+%     title(figure_title)
     if(more_figures)
 %         err = abs(f_new_org - f_new);
 %         figure
@@ -29,19 +29,24 @@ if (display_figure)
             figure
             plot(new_points,rel_err);
         else
-            figure(h)
-            hold all
-            p = plot(new_points,rel_err);
-            set(p, 'LineWidth',2);
+            figure(h)            
+            if (isempty(get(h, 'Children')))
+                p = plot(new_points,rel_err);
+                hold all
+            else
+                p = plot(new_points,rel_err, '--r');
+                set(p,'MarkerSize', 10)
+            end
+            set(p, 'LineWidth',1.5);
             ind =  strfind(in_figure_title, 'function');
             fig_legend = in_figure_title(1:ind-1);
             [~,~,~,text]=legend;
             legend(text,fig_legend)            
         end               
-        title('Relative ERROR');
+%         title('Relative ERROR');
         figure
         d = diff(f')./diff(points);
-        plot(points(1:(end-1)),d);
+        plot(points(1:(end-1)),d, 'LineWidth',1.5);
         legend('Derivative');
     end
 end
