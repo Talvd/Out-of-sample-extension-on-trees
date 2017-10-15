@@ -50,8 +50,8 @@ if size(points,2)<k
     k = size(points,2);
 end
 
-if size(points,2)<(NN+1)
-    NN = size(points,2)-1;
+if size(points,2)<NN
+    NN = size(points,2);
 end
 
 if size(points,2)==1
@@ -66,20 +66,15 @@ else
    func_eps = @Set_Epsilon_V2;
 end
 
-% I try to overcome the bug of repeated identical points (the D matrix must
-% have non-zeros
-MIN_Neighbours = 5;
-if size(points,2)<MIN_Neighbours
-    NN=size(points,2);
-end
 
-% if we choose NN==1 there are no neighbours (the case of single data point
-% was already treated).
-if NN==1
-   NN=2;
-end
-   
 [ind, dist] = NN_func(points,NN);
+
+
+
+% if (size(ind, 1) == 1 && size(ind, 2) == 2 && norm(ind-[1 2]) == 0)
+%    tt=0; 
+% end
+
 
 % if we given different metric
 if ~isempty(metric)
@@ -96,15 +91,13 @@ end
 % end
 %%========= DEBUGGING PART ===================
 
-% Epsi = median(dist(:));
+% if (NN ==1 )
+    Epsi = func_eps(ind, dist, 0, percent);  % auto select epsilon for the Graph Laplacian
 
-%%======== Nir Code ============
-Epsi = func_eps(ind, dist, 0, percent);  % auto select epsilon for the Graph Laplacian
-
-[W,D]=Graph_Matrix(ind, dist, Epsi, 0);
-%%======== Nir Code ============
-
-% [W,D]=Graph_Matrix_Var(ind, dist, size(points,1));
+    [W,D]=Graph_Matrix(ind, dist, Epsi, 0);
+% else
+%     [W,D]=Graph_Matrix_Var(ind, dist, size(points,1));
+% end
 
 D_minus_half = diag(sqrt(D.^(-1)));
 S = D_minus_half*W;
@@ -116,7 +109,7 @@ D_half = diag(sqrt(D));
 if k<=(size(points,2)/2)
     try
         % nX1 starting vector
-%         opts.v0     = D_half*ones(numel(D),1);
+        opts.v0     = D_half*ones(numel(D),1);
         opts.isreal = 1;
         opts.issym  = 1;
         [V,E] = eigs(S,k,'lm',opts);

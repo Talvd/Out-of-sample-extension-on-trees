@@ -66,7 +66,7 @@ if plotting
 end
 
 % packing the basis into a sparse matrix
-B = tree2basis(T);
+[B,T] = tree2basis(T);
 
 if plotting
     figure(4);

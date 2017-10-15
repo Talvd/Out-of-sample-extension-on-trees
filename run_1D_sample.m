@@ -6,11 +6,11 @@
 % Nov 2016
 %---------------------------------------------------------------
 
-display_figure = 1;
-more_figure=1;
+display_figure = 0;
+more_figure=0;
 
 run_ls = 0;
-run_abcr = 1;
+run_abcr = 0;
 run_lmw = 1;
 run_nystrom =0;
 run_mse = 0;
@@ -18,7 +18,7 @@ run_mse = 0;
 warning('off','all')
 
 %create the data for 1D samples
-N = 64;
+N = 64; % 64;
 a = 0;
 b = 2;
     
@@ -26,22 +26,29 @@ points = linspace(a,b,N);
 delta = abs((points(1)-points(2))*.5);
 new_points = linspace(a+delta,b,2*N-1);
     
-% funcs = {@sine_one_over_x @step @sin @sin_15x @step_sin_1D};
-funcs = {@sine_one_over_x @sin @sin_15x};
+funcs = {@sine_one_over_x @step @sin @sin_15x @step_sin_1D};
+% funcs = {@sine_one_over_x @sin @sin_15x};
+% funcs = {@step};
 
 funcs_num = size(funcs,2);
 
 for i=1:funcs_num
-    h= figure;
+  
     func = funcs{i};
     f = func(points)';
     f_new_org = func(new_points)';
     
+    h=[];
+    if (more_figure)
+      h= figure;
+    end
+    
     % Least square
-    if (run_ls)      
+    if (run_ls) 
         f_new = [];
         for p=new_points
-            v=quaddric_fit_extension(points,p,f,N,1);   
+            idx= knnsearch(points',p','k',5);
+            v=quaddric_fit_extension(points(:,idx),p,f(idx,:),1);  
             f_new =[f_new; v(end)];               
         end 
         figure_title =['LS function=' char(func)];       
@@ -57,9 +64,9 @@ for i=1:funcs_num
     
     %LMW
     if (run_lmw)
-%         k_params = [1 3 5 10 N];
+        k_params = [1 3 5 10 N];
 
-        k_params = [5 10 N];
+%         k_params = 10; %[5 10 N];
 
         for k=k_params
             f_new =  run_LMW_extension(f, points, new_points, k, 1);
