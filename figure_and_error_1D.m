@@ -24,7 +24,7 @@ if (display_figure)
 %         figure
 %         plot(new_points,err);
 %         legend('ERROR');
-        rel_err = abs((f_new_org - f_new)./f_new_org);
+        rel_err = abs((f_new_org - f_new)./norm(f_new_org));
         if nargin<9
             figure
             plot(new_points,rel_err);
