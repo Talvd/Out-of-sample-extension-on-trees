@@ -2,7 +2,7 @@ function [h]=figure_and_error_2D(points,new_points,f, f_new_org, f_new, figure_t
 
 % err_norm = norm(f_new_org - f_new);
 
-f_new_org(f_new_org==0) = 0.00000001;
+% f_new_org(f_new_org==0) = 0.00000001;
 rel_norm = norm(f_new_org - f_new)/norm(f_new_org);
 
 err_str = num2str(rel_norm,'%.4f');
@@ -22,7 +22,7 @@ if (display_figure)
 %     figure_title = strrep(figure_title, '_', '\_');
 %     title(figure_title)
  
-    rel_err = abs((f_new_org - f_new)./f_new_org);
+    rel_err = abs((f_new_org - f_new)./norm(f_new_org));
     if nargin<8
         figure
         plot(rel_err);
